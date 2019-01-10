@@ -1,0 +1,28 @@
+{
+  "require": {
+    "php": "~7.2.0",
+    "craftcms/cms": "^3.1.0-beta.1",
+    "vlucas/phpdotenv": "^2.4.0",
+    "ext-imagick": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "modules\\starter\\": "modules/starter/src/"
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "platform": {
+      "php": "7.2"
+    }
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ],
+    "post-create-project-cmd": [
+      "@composer dump-autoload -o",
+      "@php craft setup/welcome"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+@import "helpers/mixins";
+@import "helpers/variables";
+@import "common/common";
+@import "pages/pages";
+
+html, body {
+    height: 100%;
+    background-color: #edf6fd;
+}

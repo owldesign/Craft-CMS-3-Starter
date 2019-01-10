@@ -1,0 +1,59 @@
+// ~~~~~~~~~~~~~~~~~~~~
+// CSS Variables
+// ~~~~~~~~~~~~~~~~~~~~
+
+:root {
+    --black: black;
+    --white: white;
+
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+
+    --font-size-base: 16;
+
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+@media (max-width: var(--breakpoint-sm)) {
+    :root {    }
+}
+
+@media (max-width: var(--breakpoint-md)) {
+    :root {    }
+}
+
+@media (max-width: var(--breakpoint-lg)) {
+    :root {    }
+}
+
+@media (max-width: var(--breakpoint-xl)) {
+    :root {    }
+}
+
+
+// ~~~~~~~~~~~~~~~~~~~~
+// Colors
+// ~~~~~~~~~~~~~~~~~~~~
+$colors: (
+    "black": black,
+    "white": white,
+);
+
+$breakpoints: (
+    "breakpoint-sm": 576px,
+    "breakpoint-md": 768px,
+    "breakpoint-lg": 992px,
+    "breakpoint-xl": 1200px,
+);
+
+// ~~~~~~~~~~~~~~~~~~~~
+// Typography
+// ~~~~~~~~~~~~~~~~~~~~
+$font-size-h1: calc(var(--font-size-base) * 2.6) !default;
+$font-size-h2: calc(var(--font-size-base) * 2.15) !default;
+$font-size-h3: calc(var(--font-size-base) * 1.7) !default;
+$font-size-h4: calc(var(--font-size-base) * 1.25) !default;
+$font-size-h5: var(--font-size-base) !default;
+$font-size-h6: calc(var(--font-size-base) * 0.85) !default;

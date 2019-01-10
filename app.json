@@ -1,0 +1,26 @@
+{
+  "name": "Craft 3 Starter",
+  "description": "Craft CMS 3 Starter website for heroku",
+  "repository": "",
+  "keywords": ["craftcms"],
+  "env": {
+    "ENVIRONMENT": {
+      "description": "The environment.",
+      "value": "heroku-dev"
+    },
+    "SECURITY_KEY": {
+      "description": "Craft random security key.",
+      "value": "WSCfkUuuMoxGWuWK45NcSqkgXnsq1mRf"
+    }
+  },
+  "addons": [
+    {
+      "plan": "jawsdb-maria:kitefin"
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-php"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+:root {
+    --login-background-color: gray;
+}
+
+
+
+body.login {
+    background: var(--login-background-color);
+}

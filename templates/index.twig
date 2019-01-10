@@ -1,0 +1,14 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{% extends '_layouts/base.html' %}
+
+{% set bodyClass = 'homepage' %}
+
+{% block body %}
+    <div class="welcome" style="
+        background-image: url('/assets/images/website-social-cover.jpg');
+        background-size: 80%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 100%;
+        max-width: 100%;"></div>
+{% endblock %}

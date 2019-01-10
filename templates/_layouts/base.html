@@ -1,0 +1,61 @@
+{% set systemName = craft.app.info.name|t('site') -%}
+{% set bodyClass = (bodyClass is defined ? bodyClass~' ' : '') ~ craft.app.locale.getOrientation() -%}
+{% set slugs = craft.app.request.segments %}
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    {% block head %}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{{ systemName }} </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="referrer" content="origin-when-cross-origin" />
+
+    {# Site Metas #}
+    {% include '_metas/meta' ignore missing %}
+
+    {# Google Tracking #}
+    {% include '_partials/google-tracking' ignore missing with { id: '******' } %}
+
+    {# Open Graph #}
+    {% include '_partials/open-graph' ignore missing with {
+        title: systemName,
+        url: 'https://website.com',
+        type: 'website',
+        image: '/assets/images/website-social-cover.jpg',
+        description: 'My website'
+    } %}
+
+    {# Reset CSS Styles #}
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
+
+    {# Register CSS Styles #}
+    {% do view.registerCssFile("/assets/css/application.css") %}
+
+    {# Register JavaScripts #}
+    {% do view.registerJsFile("/assets/js/application.js") %}
+
+    {# Register Custom Fonts #}
+    {% do view.registerCssFile("//use.typekit.net/dng7xhl.css") %}
+
+    <script type="text/javascript">
+        // Fix for Firefox autofocus CSS bug
+        // See: http://stackoverflow.com/questions/18943276/html-5-autofocus-messes-up-css-loading/18945951#18945951
+    </script>
+    {% endblock %}
+</head>
+<body class="{{ bodyClass }}">
+
+    {% block body %}{% endblock %}
+
+    {% block foot %}
+        <script>
+            window.API = {};
+            API.actionUrl = '{{ actionUrl("") }}/';
+            API.csrfTokenName = "{{ craft.app.config.general.csrfTokenName|e('js') }}";
+            API.csrfTokenValue = "{{ craft.app.request.csrfToken|e('js') }}";
+        </script>
+    {% endblock %}
+</body>
+</html>
